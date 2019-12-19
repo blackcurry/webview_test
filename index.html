@@ -23,7 +23,7 @@
         script.onload = () => {
             kakao.maps.load(() => {
                 var el = document.getElementById('map');
-                var map = new kakao.maps.Map(el, {
+                map = new kakao.maps.Map(el, {
                     center: new kakao.maps.Coords(523951.25, 1085073.75)
                 });
             });
