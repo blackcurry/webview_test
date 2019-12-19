@@ -9,15 +9,24 @@
         let script = document.createElement('script');
         script.async = true;
         script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=fe10b95ba05cd3a562479fd7e2f0a7bb&autoload=false&libraries=services,clusterer`;
-        script.onload = function(){
-            var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
-            var mapOption = {
-                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                level: 3 // 지도의 확대 레벨
-            };
-            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-        };
+//         script.onload = function(){
+//             var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
+//             var mapOption = {
+//                 center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+//                 level: 3 // 지도의 확대 레벨
+//             };
+//             var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+//         };
         document.head.appendChild(script);
+        
+        script.onload = () => {
+            kakao.maps.load(() => {
+                var el = document.getElementById('map');
+                var map = new kakao.maps.Map(el, {
+                    center: new kakao.maps.Coords(523951.25, 1085073.75)
+                });
+            });
+        };
 
         function created() {
             var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
