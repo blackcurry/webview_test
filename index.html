@@ -14,6 +14,7 @@
                 center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
                 level: 3 // 지도의 확대 레벨
             };
+            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         };
         document.head.appendChild(script);
 
@@ -24,7 +25,6 @@
                 level: 3 // 지도의 확대 레벨
             };
 
-            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
             // 지도에 표시할 원을 생성합니다
             var circle1 = new kakao.maps.Circle({
                 center: new kakao.maps.LatLng(33.450701, 126.570667),  // 원의 중심좌표 입니다 
