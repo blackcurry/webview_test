@@ -39,7 +39,7 @@
 
             // 지도에 표시할 원을 생성합니다
             var circle1 = new kakao.maps.Circle({
-                center: new kakao.maps.LatLng(33.450701, 126.570667),  // 원의 중심좌표 입니다 
+                center: moveLatLon,  // 원의 중심좌표 입니다 
                 radius: 30, // 미터 단위의 원의 반지름입니다 
                 strokeWeight: 0, // 선의 두께입니다 
                 fillColor: '#1c90fb', // 채우기 색깔입니다
@@ -47,7 +47,7 @@
             });
 
             var circle2 = new kakao.maps.Circle({
-                center: new kakao.maps.LatLng(33.450701, 126.570667),  // 원의 중심좌표 입니다 
+                center: moveLatLon,  // 원의 중심좌표 입니다 
                 radius: 20, // 미터 단위의 원의 반지름입니다 
                 strokeWeight: 0, // 선의 두께입니다 
                 fillColor: '#1c90fb', // 채우기 색깔입니다
@@ -55,7 +55,7 @@
             });
 
             var circle3 = new kakao.maps.Circle({
-                center: new kakao.maps.LatLng(33.450701, 126.570667),  // 원의 중심좌표 입니다 
+                center: moveLatLon,  // 원의 중심좌표 입니다 
                 radius: 10, // 미터 단위의 원의 반지름입니다 
                 strokeWeight: 0, // 선의 두께입니다 
                 fillColor: '#1c90fb', // 채우기 색깔입니다
@@ -69,6 +69,7 @@
             
             // 지도 중심을 이동 시킵니다
             map.setCenter(moveLatLon);
+            map.setLevel(1);
         }
         </script>
 </body>
